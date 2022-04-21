@@ -8,35 +8,50 @@ namespace WebApplication2.Service
     public class SnippetService : ISnippetService
     {
         private readonly SnippetContext _context;
-        public SnippetService(SnippetContext context)
+        private readonly IMapper _mapper;
+
+        public SnippetService(SnippetContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public Task AddSnippet(AddSnippetRequestDTO model)
+        public async Task AddSnippet(AddSnippetRequestDTO model)
         {
-            throw new NotImplementedException();
+            var snippet = _mapper.Map<SnippetEntity>(model);
+            _context.Snippets.Add(snippet);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeleteSnippet(int id)
+        public async Task UpdateSnippet(int id, UpdateSnippetRequestDTO model)
         {
-            throw new NotImplementedException();
+            var snippet = new SnippetEntity { Id = id };
+            _context.Attach(snippet);
+            snippet.Title = model.Title;
+            snippet.Content = model.Content;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteSnippet(int id)
+        {
+            var snippet = new SnippetEntity { Id = id };
+            _context.Attach(snippet);
+            snippet.IsDeleted = 1;
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<GetAllSnippetResponseDTO>> GetAllSnippets()
         {
-            return await _context.Snippets.ProjectToListAsync<GetAllSnippetResponseDTO>();
+            var data = await _context.Snippets.Where(p => p.IsDeleted == 0).ToListAsync();
+            return _mapper.Map<List<GetAllSnippetResponseDTO>>(data);
         }
 
         public async Task<GetSnippetByIdResponseDTO> GetSnippetById(int id)
         {
-            var a =  _context.Snippets.ProjectToFirst<GetSnippetByIdResponseDTO>();
-            return await _context.Snippets.ProjectToFirstOrDefaultAsync<GetSnippetByIdResponseDTO>();
+            var data = await _context.Snippets.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == 0);
+            return _mapper.Map<GetSnippetByIdResponseDTO>(data);
         }
 
-        public Task UpdateSnippet(int id, UpdateSnippetRequestDTO model)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

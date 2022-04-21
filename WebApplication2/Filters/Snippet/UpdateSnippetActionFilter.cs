@@ -22,6 +22,8 @@ namespace WebApplication2.Filters.Snippet
             {
                 context.Result = new NotFoundResult();
             }
+
+            await next();
         }
     }
 }

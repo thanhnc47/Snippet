@@ -61,15 +61,20 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPut("{id}")]
-        [CheckSnippetExistFilter]
+        // [CheckSnippetExistFilter]
         public async Task<ActionResult> UpdateSnippet(int id, UpdateSnippetRequestDTO model)
         {
+            // var snippet = await _snippetService.GetSnippetById(id);
+            // if (snippet is null)
+            // {
+            //     return BadRequest();
+            // }
             await _snippetService.UpdateSnippet(id, model);
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        [CheckSnippetExistFilter]
+        // [CheckSnippetExistFilter]
         public async Task<ActionResult> DeleteSnippet(int id)
         {
             await _snippetService.DeleteSnippet(id);

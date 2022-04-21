@@ -2573,19 +2573,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ncthanh2\\.nuget\\packages\\": {}
+    "C:\\Users\\Thanh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ncthanh2\\source\\repos\\SnippetManagementAPI\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\Thanh\\Desktop\\Source\\Snippet\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\ncthanh2\\source\\repos\\SnippetManagementAPI\\WebApplication2\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\ncthanh2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ncthanh2\\source\\repos\\SnippetManagementAPI\\WebApplication2\\obj\\",
+      "projectPath": "C:\\Users\\Thanh\\Desktop\\Source\\Snippet\\WebApplication2\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\Thanh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thanh\\Desktop\\Source\\Snippet\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ncthanh2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2658,7 +2658,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
