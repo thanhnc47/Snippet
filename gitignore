@@ -2,6 +2,6 @@
 .vscode
 .config
 WebApplication2\bin
-WebApplication2/obj
-WebApplication2/Properties
+WebApplication2\obj
+WebApplication2\Properties
 WebApplication2.csproj.user
