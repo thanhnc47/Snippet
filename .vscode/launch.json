@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/WebApplication2/bin/Debug/net6.0/WebApplication2.dll",
+            "program": "${workspaceFolder}/SnippetAPI/bin/Debug/net6.0/SnippetAPI.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/WebApplication2",
+            "cwd": "${workspaceFolder}/SnippetAPI",
             // "stopAtEntry": true,
             // "serverReadyAction": {
             //     // "action": "openExternally",
