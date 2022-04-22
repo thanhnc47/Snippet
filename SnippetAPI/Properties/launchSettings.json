@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WebApplication2": {
+    "SnippetAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
